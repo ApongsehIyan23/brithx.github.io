@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-LAB ThinkTank Timeline</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 14px;
+    }
+
+    body {
+      background: #f6f9fc;
+      font-family: "Open Sans", sans-serif;
+      color: #525f7f;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 5%;
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .timeline__event {
+      display: flex;
+      align-items: stretch;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      min-height: 200px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline__event:nth-child(even) {
+      flex-direction: row-reverse;
+      transform: translateX(100px);
+    }
+
+    .timeline__event.animate-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline__event__image {
+      flex: 0 0 250px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline__event__image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--overlay-color) 0%, transparent 100%);
+      opacity: 0.3;
+    }
+
+    .timeline__event__content {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .timeline__event__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+
+    .timeline__event__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--icon-bg);
+      color: var(--icon-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .timeline__event__meta {
+      flex: 1;
+    }
+
+    .timeline__event__badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-color);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .timeline__event__date {
+      color: var(--date-color);
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: var(--date-bg);
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .timeline__event__title {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--title-color);
+      margin-bottom: 12px;
+    }
+
+    .timeline__event__description {
+      flex: 1;
+    }
+
+    .timeline__event__description p {
+      margin: 0;
+      line-height: 1.6;
+      color: #5a6c7d;
+      font-size: 0.9rem;
+      text-align: justify;
+    }
+
+    .timeline__event__stats {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .timeline__event__stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    .timeline__event__stat i {
+      color: var(--icon-color);
+    }
+
+    /* Type 1 - Red */
+    .timeline__event--type1 {
+      --title-color: #FF6B6B;
+      --date-color: white;
+      --date-bg: #FF6B6B;
+      --icon-color: #FF6B6B;
+      --icon-bg: #FFE3E3;
+      --badge-bg: #FF6B6B;
+      --badge-color: white;
+      --overlay-color: #FF6B6B;
+    }
+
+    /* Type 2 - Teal */
+    .timeline__event--type2 {
+      --title-color: #4ECDC4;
+      --date-color: white;
+      --date-bg: #4ECDC4;
+      --icon-color: #4ECDC4;
+      --icon-bg: #E0F7F7;
+      --badge-bg: #4ECDC4;
+      --badge-color: white;
+      --overlay-color: #4ECDC4;
+    }
+
+    /* Type 3 - Blue */
+    .timeline__event--type3 {
+      --title-color: #45B7D1;
+      --date-color: white;
+      --date-bg: #45B7D1;
+      --icon-color: #45B7D1;
+      --icon-bg: #E1F5FE;
+      --badge-bg: #45B7D1;
+      --badge-color: white;
+      --overlay-color: #45B7D1;
+    }
+
+    /* Type 4 - Purple */
+    .timeline__event--type4 {
+      --title-color: #F093FB;
+      --date-color: white;
+      --date-bg: #F093FB;
+      --icon-color: #F093FB;
+      --icon-bg: #FCE4FF;
+      --badge-bg: #F093FB;
+      --badge-color: white;
+      --overlay-color: #F093FB;
+    }
+
+    /* Type 5 - Green */
+    .timeline__event--type5 {
+      --title-color: #4CAF50;
+      --date-color: white;
+      --date-bg: #4CAF50;
+      --icon-color: #4CAF50;
+      --icon-bg: #E8F5E8;
+      --badge-bg: #4CAF50;
+      --badge-color: white;
+      --overlay-color: #4CAF50;
+    }
+
+    /* Type 6 - Orange */
+    .timeline__event--type6 {
+      --title-color: #FF9800;
+      --date-color: white;
+      --date-bg: #FF9800;
+      --icon-color: #FF9800;
+      --icon-bg: #FFF3E0;
+      --badge-bg: #FF9800;
+      --badge-color: white;
+      --overlay-color: #FF9800;
+    }
+
+    @media (max-width: 768px) {
+      .timeline__event {
+        flex-direction: column !important;
+        min-height: auto;
+        transform: translateY(50px) !important;
+      }
+
+      .timeline__event:nth-child(even) {
+        flex-direction: column !important;
+        transform: translateY(50px) !important;
+      }
+
+      .timeline__event.animate-in {
+        transform: translateY(0) !important;
+      }
+
+      .timeline__event__image {
+        flex: 0 0 150px;
+        width: 100%;
+      }
+
+      .timeline__event__content {
+        padding: 15px;
+      }
+
+      .timeline__event__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .timeline__event__stats {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .timeline__event__content {
+        padding: 15px;
+      }
+
+      .timeline__event__title {
+        font-size: 1.2rem;
+      }
+
+      .timeline__event__image {
+        flex: 0 0 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>E-LAB ThinkTank Timeline</h2>
+  <div class="timeline">
+    
+    <div class="timeline__event timeline__event--type1">
+      <div class="timeline__event__image" style="background-image: url('https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=500&h=300&fit=crop');">
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__header">
+          <div class="timeline__event__icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="timeline__event__meta">
+            <div class="timeline__event__badge">Challenge 1</div>
+            <div class="timeline__event__date">Week 1</div>
+          </div>
+        </div>
+        <div class="timeline__event__title">Problem Discovery</div>
+        <div class="timeline__event__description">
+          <p>Deep-dive analysis of climate challenges faced by farmers through comprehensive field research, stakeholder interviews, and data collection to identify key pain points and opportunities for innovation.</p>
+        </div>
+        <div class="timeline__event__stats">
+          <div class="timeline__event__stat">
+            <i class="fas fa-users"></i>
+            <span>15 Farmers Interviewed</span>
+          </div>
+          <div class="timeline__event__stat">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>5 Rural Communities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline__event timeline__event--type2">
+      <div class="timeline__event__image" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&h=300&fit=crop');">
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__header">
+          <div class="timeline__event__icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="timeline__event__meta">
+            <div class="timeline__event__badge">Challenge 2</div>
+            <div class="timeline__event__date">Week 3</div>
+          </div>
+        </div>
+        <div class="timeline__event__title">User Research</div>
+        <div class="timeline__event__description">
+          <p>Comprehensive user interviews and persona development to understand farmer needs, behaviors, and pain points. Created detailed user journey maps and empathy maps to guide solution development.</p>
+        </div>
+        <div class="timeline__event__stats">
+          <div class="timeline__event__stat">
+            <i class="fas fa-clipboard-list"></i>
+            <span>25 User Surveys</span>
+          </div>
+          <div class="timeline__event__stat">
+            <i class="fas fa-user-friends"></i>
+            <span>3 Personas Created</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline__event timeline__event--type3">
+      <div class="timeline__event__image" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=500&h=300&fit=crop');">
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__header">
+          <div class="timeline__event__icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="timeline__event__meta">
+            <div class="timeline__event__badge">Challenge 3</div>
+            <div class="timeline__event__date">Week 5</div>
+          </div>
+        </div>
+        <div class="timeline__event__title">Solution Prototyping</div>
+        <div class="timeline__event__description">
+          <p>Rapid prototyping of low-cost, accessible climate data solutions tailored for rural communities. Developed multiple concept variants and tested feasibility with stakeholders.</p>
+        </div>
+        <div class="timeline__event__stats">
+          <div class="timeline__event__stat">
+            <i class="fas fa-lightbulb"></i>
+            <span>8 Concept Variants</span>
+          </div>
+          <div class="timeline__event__stat">
+            <i class="fas fa-tools"></i>
+            <span>3 Working Prototypes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline__event timeline__event--type4">
+      <div class="timeline__event__image" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=300&fit=crop');">
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__header">
+          <div class="timeline__event__icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="timeline__event__meta">
+            <div class="timeline__event__badge">Challenge 4</div>
+            <div class="timeline__event__date">Week 7</div>
+          </div>
+        </div>
+        <div class="timeline__event__title">MVP Development</div>
+        <div class="timeline__event__description">
+          <p>Building a minimum viable product of our climate support platform with core functionality. Implemented key features including weather data integration, alert systems, and user-friendly interface.</p>
+        </div>
+        <div class="timeline__event__stats">
+          <div class="timeline__event__stat">
+            <i class="fas fa-code"></i>
+            <span>12 Core Features</span>
+          </div>
+          <div class="timeline__event__stat">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Mobile-First Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline__event timeline__event--type5">
+      <div class="timeline__event__image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop');">
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__header">
+          <div class="timeline__event__icon">
+            <i class="fas fa-flask"></i>
+          </div>
+          <div class="timeline__event__meta">
+            <div class="timeline__event__badge">Challenge 5</div>
+            <div class="timeline__event__date">Week 9</div>
+          </div>
+        </div>
+        <div class="timeline__event__title">User Testing</div>
+        <div class="timeline__event__description">
+          <p>Extensive user testing with real farmers, gathering feedback and iterating on our solution. Conducted usability studies, A/B testing, and refined the user experience based on insights.</p>
+        </div>
+        <div class="timeline__event__stats">
+          <div class="timeline__event__stat">
+            <i class="fas fa-chart-line"></i>
+            <span>85% User Satisfaction</span>
+          </div>
+          <div class="timeline__event__stat">
+            <i class="fas fa-sync-alt"></i>
+            <span>3 Iterations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline__event timeline__event--type6">
+      <div class="timeline__event__image" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=500&h=300&fit=crop');">
+      </div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__header">
+          <div class="timeline__event__icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <div class="timeline__event__meta">
+            <div class="timeline__event__badge">Challenge 6</div>
+            <div class="timeline__event__date">Week 11</div>
+          </div>
+        </div>
+        <div class="timeline__event__title">Final Pitch</div>
+        <div class="timeline__event__description">
+          <p>Presenting our complete solution to stakeholders and developing a comprehensive scaling strategy. Delivered final presentation with business model, impact metrics, and implementation roadmap.</p>
+        </div>
+        <div class="timeline__event__stats">
+          <div class="timeline__event__stat">
+            <i class="fas fa-trophy"></i>
+            <span>Best Innovation Award</span>
+          </div>
+          <div class="timeline__event__stat">
+            <i class="fas fa-handshake"></i>
+            <span>2 Partnership Offers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all timeline events
+    document.querySelectorAll('.timeline__event').forEach(event => {
+      observer.observe(event);
+    });
+
+    // Add some extra spacing for better scroll experience
+    document.body.style.paddingBottom = '100px';
+  </script>
+</body>
+</html>

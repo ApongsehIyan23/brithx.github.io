@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-LAB Challanges | BridgeThink</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Stylesheet/style.css">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+    
+    <main>
+        <header>
+            <figure class="logo" style="display:none;">
+                <img src="img/logo.png" alt="BridgeThink Logo">
+            </figure>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="../Home/index.html">Home</a>
+                <a href="../About/about.html">About</a>
+                <a href="../E-LAB/e-lab.html" class="active">E-LAB</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#prototype">Prototype</a>
+            </nav>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+                <!-- Replace whatever hero section you have with this -->
+        <section class="about-hero" style="background: url(../Photos/1752409631333.jpg) no-repeat center center;">
+            <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>E-LAB Challenges</h1>
+                    <p>Our documentation of the six E-lab challenges and its impact.</p>
+                </div>
+        </section>
+
+
+    <div class="timeline">
+        <!-- Timeline Event 1 -->
+        <div class="timeline__event timeline__event--type1">
+            <div class="timeline__event__image" style="background-image: url('../Photos/1752409414556.jpg');"></div>
+            <div class="timeline__event__content">
+                <div class="timeline__event__header">
+                    <div class="timeline__event__icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="timeline__event__meta">
+                        <div class="timeline__event__badge">Challenge 1</div>
+                        <div class="timeline__event__date">Week 1</div>
+                    </div>
+                </div>
+                <div class="timeline__event__title">Team Introduction</div>
+                <div class="timeline__event__description">
+                    <p>Deep-dive analysis of climate challenges faced by farmers through comprehensive field research, stakeholder interviews, and data collection to identify key pain points and opportunities for innovation.</p>
+                    <button class="find-out-more" data-modal-target="modalOverlay">Click To Find Out More</button>
+                </div>
+                <div class="timeline__event__footer">
+                    <div class="timeline__event__stats">
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-users"></i>
+                            <span>15 Farmers Interviewed</span>
+                        </div>
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>5 Rural Communities</span>
+                        </div>
+                    </div>
+                    <div class="timeline__event__grade">
+                        <div class="grade-counter">
+                            <span class="grade-current">0</span>
+                            <span class="grade-divider">/</span>
+                            <span class="grade-total">1700</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Event 2 -->
+        <div class="timeline__event timeline__event--type2">
+            <div class="timeline__event__image" style="background-image: url('../Photos/The-Iconic-Attire-of-the-Maasai-People.webp');"></div>
+            <div class="timeline__event__content">
+                <div class="timeline__event__header">
+                    <div class="timeline__event__icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="timeline__event__meta">
+                        <div class="timeline__event__badge">Challenge 2</div>
+                        <div class="timeline__event__date">Week 3</div>
+                    </div>
+                </div>
+                <div class="timeline__event__title">Discover Africa</div>
+                <div class="timeline__event__description">
+                    <p>Comprehensive user interviews and persona development to understand farmer needs, behaviors, and pain points. Created detailed user journey maps and empathy maps to guide solution development.</p>
+                    <button class="find-out-more" data-modal-target="modalOverlay2">Click To Find Out More</button>
+                </div>
+                <div class="timeline__event__footer">
+                    <div class="timeline__event__stats">
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>25 User Surveys</span>
+                        </div>
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-user-friends"></i>
+                            <span>3 Personas Created</span>
+                        </div>
+                    </div>
+                    <div class="timeline__event__grade">
+                        <div class="grade-counter">
+                            <span class="grade-current">0</span>
+                            <span class="grade-divider">/</span>
+                            <span class="grade-total">1800</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Event 3 -->
+        <div class="timeline__event timeline__event--type3">
+            <div class="timeline__event__image" style="background-image: url('../Photos/1752409414604.jpg');"></div>
+            <div class="timeline__event__content">
+                <div class="timeline__event__header">
+                    <div class="timeline__event__icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="timeline__event__meta">
+                        <div class="timeline__event__badge">Challenge 3</div>
+                        <div class="timeline__event__date">Week 5</div>
+                    </div>
+                </div>
+                <div class="timeline__event__title">Help Lab</div>
+                <div class="timeline__event__description">
+                    <p>Rapid prototyping of low-cost, accessible climate data solutions tailored for rural communities. Developed multiple concept variants and tested feasibility with stakeholders.</p>
+                    <button class="find-out-more" data-modal-target="modalOverlay3">Click To Find Out More</button>
+                </div>
+                <div class="timeline__event__footer">
+                    <div class="timeline__event__stats">
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>8 Concept Variants</span>
+                        </div>
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-tools"></i>
+                            <span>3 Working Prototypes</span>
+                        </div>
+                    </div>
+                    <div class="timeline__event__grade">
+                        <div class="grade-counter">
+                            <span class="grade-current">0</span>
+                            <span class="grade-divider">/</span>
+                            <span class="grade-total">2000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Event 4 -->
+        <div class="timeline__event timeline__event--type4">
+            <div class="timeline__event__image" style="background-image: url('../Photos/481514872_2099936710427899_1910590791004227902_n.jpg');"></div>
+            <div class="timeline__event__content">
+                <div class="timeline__event__header">
+                    <div class="timeline__event__icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline__event__meta">
+                        <div class="timeline__event__badge">Challenge 4</div>
+                        <div class="timeline__event__date">Week 7</div>
+                    </div>
+                </div>
+                <div class="timeline__event__title">Hunt For Treasure</div>
+                <div class="timeline__event__description">
+                    <p>Building a minimum viable product of our climate support platform with core functionality. Implemented key features including weather data integration, alert systems, and user-friendly interface.</p>
+                    <button class="find-out-more" data-modal-target="modalOverlay4">Click To Find Out More</button>
+                </div>
+                <div class="timeline__event__footer">
+                    <div class="timeline__event__stats">
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-code"></i>
+                            <span>12 Core Features</span>
+                        </div>
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile-First Design</span>
+                        </div>
+                    </div>
+                    <div class="timeline__event__grade">
+                        <div class="grade-counter">
+                            <span class="grade-current">0</span>
+                            <span class="grade-divider">/</span>
+                            <span class="grade-total">2500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Event 5 -->
+        <div class="timeline__event timeline__event--type5">
+            <div class="timeline__event__image" style="background-image: url('../Photos/1752409631497.jpg');"></div>
+            <div class="timeline__event__content">
+                <div class="timeline__event__header">
+                    <div class="timeline__event__icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="timeline__event__meta">
+                        <div class="timeline__event__badge">Challenge 5</div>
+                        <div class="timeline__event__date">Week 9</div>
+                    </div>
+                </div>
+                <div class="timeline__event__title">Launching Our Mission V2</div>
+                <div class="timeline__event__description">
+                    <p>Extensive user testing with real farmers, gathering feedback and iterating on our solution. Conducted usability studies, A/B testing, and refined the user experience based on insights.</p>
+                    <button class="find-out-more" data-modal-target="modalOverlay5">Click To Find Out More</button>
+                </div>
+                <div class="timeline__event__footer">
+                    <div class="timeline__event__stats">
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-chart-line"></i>
+                            <span>85% User Satisfaction</span>
+                        </div>
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>3 Iterations</span>
+                        </div>
+                    </div>
+                    <div class="timeline__event__grade">
+                        <div class="grade-counter">
+                            <span class="grade-current">0</span>
+                            <span class="grade-divider">/</span>
+                            <span class="grade-total">2000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Event 6 -->
+        <div class="timeline__event timeline__event--type6">
+            <div class="timeline__event__image" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=500&h=300&fit=crop');"></div>
+            <div class="timeline__event__content">
+                <div class="timeline__event__header">
+                    <div class="timeline__event__icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="timeline__event__meta">
+                        <div class="timeline__event__badge">Challenge 6</div>
+                        <div class="timeline__event__date">Week 11</div>
+                    </div>
+                </div>
+                <div class="timeline__event__title">Our Digital Print</div>
+                <div class="timeline__event__description">
+                    <p>Presenting our complete solution to stakeholders and developing a comprehensive scaling strategy. Delivered final presentation with business model, impact metrics, and implementation roadmap.</p>
+                    <button class="find-out-more" data-modal-target="modalOverlay6">Click To Find Out More</button>
+                </div>
+                <div class="timeline__event__footer">
+                    <div class="timeline__event__stats">
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-trophy"></i>
+                            <span>Best Innovation Award</span>
+                        </div>
+                        <div class="timeline__event__stat">
+                            <i class="fas fa-handshake"></i>
+                            <span>2 Partnership Offers</span>
+                        </div>
+                    </div>
+                    <div class="timeline__event__grade">
+                        <div class="grade-counter">
+                            <span class="grade-current">Awaiting</span>
+                            <span class="grade-divider"></span>
+                            <span class="grade-total"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Lightbox -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <div class="modal-image" style="background-image: url('../Photos/1752409414556.jpg');"></div>
+            <div class="modal-content">
+             <!-- In modal 1 -->
+                <div class="modal-close" data-modal-close="modalOverlay">
+                    <i class="fas fa-times"></i>
+                </div>
+
+                <div class="info-card">
+                    <h3>Challenge Information</h3>
+                    <p><strong>Category:</strong> Team Introduction</p>
+                    <p><strong>Project Date:</strong> May 23, 2025 - May 29, 2025</p>
+                    <p><strong>Project URL:</strong> <a href="https://www.instagram.com/reel/DKOj3yAobNA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">Link</a></p>
+                </div>
+                <h4>About This Challenge</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a href="https://youtu.be/Q3ZXdlNmoIw?si=SdEc8I19wflBSYsV" class="video-link" target="_blank">
+                    <i class="fas fa-play"></i> Watch Challenge Video
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Modal Lightbox -->
+<div class="modal-overlay" id="modalOverlay2">
+    <div class="modal-container">
+        <div class="modal-image" style="background-image: url('../Photos/The-Iconic-Attire-of-the-Maasai-People.webp');"></div>
+        <div class="modal-content">
+            <!-- In modal 2 -->
+            <div class="modal-close" data-modal-close="modalOverlay2">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="info-card">
+                <h3>Challenge Information</h3>
+                <p><strong>Category:</strong> Story Telling on an African Community</p>
+                <p><strong>Project Date:</strong> May 30, 2025 - June 05, 2025</p>
+                <p><strong>Project URL:</strong> <a href="https://www.instagram.com/reel/DKdG2-RoP_a/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">Link</a></p>
+            </div>
+            <h4>About This Second Challenge</h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="https://youtu.be/eIA9LjViFf0?si=tAxqMes5ciloVk6u" class="video-link" target="_blank">
+                <i class="fas fa-play"></i> Watch Second Challenge Video
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay3">
+    <div class="modal-container">
+        <div class="modal-image" style="background-image: url('../Photos/1752409414842.jpg');"></div>
+        <div class="modal-content">
+            <!-- In modal 2 -->
+            <div class="modal-close" data-modal-close="modalOverlay3">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="info-card">
+                <h3>Challenge Information</h3>
+                <p><strong>Category:</strong> Community Engagement</p>
+                <p><strong>Project Date:</strong> June 06, 2025 - June 19, 2025</p>
+                <p><strong>Project URL:</strong> <a href="https://www.instagram.com/reel/DLF5Ic_IKx3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">Link</a></p>
+            </div>
+            <h4>About Help Lab</h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="https://youtu.be/EFhqwMvQ_ok?si=4ixMm3Fxv8jg0SBy" class="video-link" target="_blank">
+                <i class="fas fa-play"></i> Watch Third Challenge Video
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay4">
+    <div class="modal-container">
+        <div class="modal-image" style="background-image: url('../Photos/489789475_2127736787647891_1852482102329795368_n.jpg');"></div>
+        <div class="modal-content">
+            <!-- In modal 2 -->
+            <div class="modal-close" data-modal-close="modalOverlay4">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="info-card">
+                <h3>Challenge Information</h3>
+                <p><strong>Category:</strong> Conducting an Interview</p>
+                <p><strong>Project Date:</strong> June 20, 2025 - June 26, 2025</p>
+                <p><strong>Project URL:</strong> <a href="https://youtu.be/DclBxja8WaM?si=JDHVtt8_weubz9fa" target="_blank">Link</a></p>
+            </div>
+            <h4>About Hunt for Treasure</h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="https://youtu.be/DclBxja8WaM?si=JDHVtt8_weubz9fa" class="video-link" target="_blank">
+                <i class="fas fa-play"></i> Watch the Video
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay5">
+    <div class="modal-container">
+        <div class="modal-image" style="background-image: url('../Photos/1752409631110.jpg');"></div>
+        <div class="modal-content">
+            <!-- In modal 2 -->
+            <div class="modal-close" data-modal-close="modalOverlay5">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="info-card">
+                <h3>Challenge Information</h3>
+                <p><strong>Category:</strong> Project Proposal for Grant</p>
+                <p><strong>Project Date:</strong> Jun 27, 2025 - July 03, 2025</p>
+                <p><strong>Project URL:</strong> <a href="https://www.instagram.com/reel/DLqlyKJooyw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">Link</a></p>
+            </div>
+            <h4>About Lauch Your Mission</h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="https://youtu.be/DErOEvIoQmk?si=0pAC__goia3LVrje" class="video-link" target="_blank">
+                <i class="fas fa-play"></i> Watch the Video
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay6">
+    <div class="modal-container">
+        <div class="modal-image" style="background-image: url('../Photos/The-Iconic-Attire-of-the-Maasai-People.webp');"></div>
+        <div class="modal-content">
+            <!-- In modal 2 -->
+            <div class="modal-close" data-modal-close="modalOverlay6">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="info-card">
+                <h3>Challenge Information</h3>
+                <p><strong>Category:</strong> Launching a Website</p>
+                <p><strong>Project Date:</strong> July 04, 2025  - July 18, 2025</p>
+                <p><strong>Project URL:</strong> <a href="https://www.instagram.com/bridge_think?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Link</a></p>
+            </div>
+            <h4>About Our Digital Print</h4>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="https://www.youtube.com/@Bridge_Think-C4" class="video-link" target="_blank">
+                <i class="fas fa-play"></i>Go To Page
+            </a>
+        </div>
+    </div>
+</div>
+</main>
+    <script src="../JavaScript/app.js"></script>
+</body>
+</html>

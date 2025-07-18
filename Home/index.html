@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | BridgeThink</title>
+    <link rel="stylesheet" href="../Stylesheet/style.css">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader"></div>
+    </div>
+    
+    <main>
+        <header>
+            <figure class="logo" style="display:none;">
+                <img src="img/logo.png" alt="BridgeThink Logo">
+            </figure>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="../Home/index.html" class="active">Home</a>
+                <a href="../About/about.html">About</a>
+                <a href="../E-LAB/e-lab.html">E-LAB</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#prototype">Prototype</a>
+            </nav>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        
+        <div class="slideshow-container" id="slideshowContainer">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('../Photos/steven-weeks-DUPFowqI6oI-unsplash (1).jpg');">
+                <div class="slide-content">
+                    <h2>Innovation</h2>
+                    <p>Bridging the gap between ideas and reality through cutting-edge technology and creative solutions.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('../Photos/irewolede-PvwdlXqo85k-unsplash.jpg');">
+                <div class="slide-content">
+                    <h2>Collaboration</h2>
+                    <p>Building stronger communities through teamwork, shared vision, and collective problem-solving.</p>
+                    <a href="#" class="btn">Join Us</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('../Photos/tobias-nii-kwatei-quartey-rmxtNwz4NI4-unsplash.jpg');">
+                <div class="slide-content">
+                    <h2>Technology</h2>
+                    <p>Empowering the future with advanced digital solutions and innovative technological frameworks.</p>
+                    <a href="#" class="btn">Explore</a>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide" style="background-image: url('../Photos/Farming-Malawi-02.jpeg');">
+                <div class="slide-content">
+                    <h2>Success</h2>
+                    <p>Achieving excellence through dedication, strategic planning, and continuous improvement.</p>
+                    <a href="#" class="btn">Get Started</a>
+                </div>
+            </div>
+            
+            <!-- Navigation arrows -->
+            <button class="slide-nav prev" id="prevBtn">❮</button>
+            <button class="slide-nav next" id="nextBtn">❯</button>
+            
+            <!-- Slide indicators -->
+            <div class="slide-indicators" id="indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+            </div>
+        </div>
+        
+        <div class="typewriter-wrapper">
+            <div class="text" id="typedText">Welcome to BridgeThink</div>
+            <div class="cursor" id="cursor"></div>
+        </div>
+        
+        <!-- Who Are We Section -->
+        <section class="who-are-we-section" id="whoAreWe">
+            <div class="container">
+                <div class="section-content">
+                    <div class="image-container animate-left">
+                        <div class="image-box">
+                            <img src="../Photos/1752409632279.jpg" alt="Our Team" />
+                        </div>
+                    </div>
+                    <div class="text-content animate-right">
+                        <h2>Who Are We?</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>Innovative Solutions</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>Expert Team</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>Quality Results</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <!-- SDGs Section -->
+        <section class="sdgs-section" id="sdgs">
+            <div class="container">
+                <h2 class="section-title">Our Impact on UN Sustainable Development Goals</h2>
+                <p class="section-subtitle">BridgeThink's solutions directly contribute to multiple SDGs</p>
+                
+                <div class="sdgs-tabs">
+                    <!-- Tab Navigation -->
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="sdg2">SDG 2</button>
+                        <button class="tab-btn" data-tab="sdg13">SDG 13</button>
+                        <button class="tab-btn" data-tab="sdg1">SDG 1</button>
+                        <button class="tab-btn" data-tab="sdg4">SDG 4</button>
+                        <button class="tab-btn" data-tab="sdg9">SDG 9</button>
+                        <button class="tab-btn" data-tab="sdg12">SDG 12</button>
+                    </div>
+                    
+                    <!-- Tab Content -->
+                    <div class="tabs-content">
+                        <!-- SDG 2 -->
+                        <div class="tab-pane active" id="sdg2">
+                            <div class="tab-content-inner">
+                                <div class="tab-image">
+                                    <img src="../Photos/Sustainable_Development_Goal_2.png" alt="SDG 2 - Zero Hunger">
+                                </div>
+                                <div class="tab-text">
+                                    <h3>Zero Hunger</h3>
+                                    <p>BridgeThink increases food security and promotes sustainable farming practices to help achieve zero hunger. Our solutions enable farmers to maximize yields while maintaining ecological balance.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SDG 13 -->
+                        <div class="tab-pane" id="sdg13">
+                            <div class="tab-content-inner">
+                                <div class="tab-image">
+                                    <img src="../Photos/SDG-13.png" alt="SDG 13 - Climate Action">
+                                </div>
+                                <div class="tab-text">
+                                    <h3>Climate Action</h3>
+                                    <p>We empower smallholder farmers with tools to adapt to climate change, reducing vulnerability to extreme weather events and promoting climate-resilient agricultural practices.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SDG 1 -->
+                        <div class="tab-pane" id="sdg1">
+                            <div class="tab-content-inner">
+                                <div class="tab-image">
+                                    <img src="../Photos/SDG-1.png" alt="SDG 1 - No Poverty">
+                                </div>
+                                <div class="tab-text">
+                                    <h3>No Poverty</h3>
+                                    <p>By improving agricultural yields and efficiency, we help lift rural communities out of poverty, creating sustainable livelihoods and economic opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SDG 4 -->
+                        <div class="tab-pane" id="sdg4">
+                            <div class="tab-content-inner">
+                                <div class="tab-image">
+                                    <img src="../Photos/SDG-4.png" alt="SDG 4 - Quality Education">
+                                </div>
+                                <div class="tab-text">
+                                    <h3>Quality Education</h3>
+                                    <p>We deliver climate-smart agricultural training to farmers, bridging the knowledge gap and promoting lifelong learning opportunities in rural communities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SDG 9 -->
+                        <div class="tab-pane" id="sdg9">
+                            <div class="tab-content-inner">
+                                <div class="tab-image">
+                                    <img src="../Photos/SDG-09.png" alt="SDG 9 - Industry, Innovation and Infrastructure">
+                                </div>
+                                <div class="tab-text">
+                                    <h3>Innovation</h3>
+                                    <p>Our USSD tool is specifically designed for rural accessibility, bringing innovative solutions to communities with limited internet access or smartphones.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SDG 12 -->
+                        <div class="tab-pane" id="sdg12">
+                            <div class="tab-content-inner">
+                                <div class="tab-image">
+                                    <img src="../Photos/SDG-12.png" alt="SDG 12 - Responsible Consumption and Production">
+                                </div>
+                                <div class="tab-text">
+                                    <h3>Sustainable Production</h3>
+                                    <p>We promote eco-friendly farming practices that reduce environmental impact while maintaining productivity, supporting sustainable consumption and production patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../JavaScript/app.js"></script>
+</body>
+</html>
